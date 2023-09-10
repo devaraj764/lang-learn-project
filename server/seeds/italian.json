@@ -1,0 +1,123 @@
+[
+    {
+      "question": "Lui è seduto sul __________.",
+      "options": ["tavolo", "sedia", "libro", "letto"],
+      "correct_answer": "letto",
+      "score": 3
+    },
+    {
+      "question": "Mangio la pizza con le __________.",
+      "options": ["mani", "forchette", "scarpe", "spade"],
+      "correct_answer": "mani",
+      "score": 2
+    },
+    {
+      "question": "Ho bisogno di un __________ per leggere il giornale.",
+      "options": ["occhiali", "cane", "telecomando", "muro"],
+      "correct_answer": "occhiali",
+      "score": 3
+    },
+    {
+      "question": "Il __________ è un frutto molto dolce.",
+      "options": ["cane", "albero", "pane", "melone"],
+      "correct_answer": "melone",
+      "score": 2
+    },
+    {
+      "question": "Le __________ sono nel frigorifero.",
+      "options": ["scarpe", "mele", "stelle", "cuffie"],
+      "correct_answer": "mele",
+      "score": 3
+    },
+    {
+      "question": "Ho lasciato le __________ sul tavolo.",
+      "options": ["libri", "chiavi", "sedie", "telecomando"],
+      "correct_answer": "chiavi",
+      "score": 3
+    },
+    {
+      "question": "Vado al __________ per fare la spesa.",
+      "options": ["mare", "supermercato", "parco", "ristorante"],
+      "correct_answer": "supermercato",
+      "score": 3
+    },
+    {
+      "question": "Mi piace leggere un buon __________ la sera.",
+      "options": ["gelato", "libro", "giornale", "computer"],
+      "correct_answer": "libro",
+      "score": 2
+    },
+    {
+      "question": "Il __________ è alto e magro.",
+      "options": ["cane", "albero", "pane", "ragazzo"],
+      "correct_answer": "ragazzo",
+      "score": 3
+    },
+    {
+      "question": "Mi piace ascoltare la musica con le __________.",
+      "options": ["scarpe", "cuffie", "stelle", "carte"],
+      "correct_answer": "cuffie",
+      "score": 2
+    },
+    {
+      "question": "Ho bisogno di una __________ per aprire la porta.",
+      "options": ["sedia", "palla", "chiave", "casa"],
+      "correct_answer": "chiave",
+      "score": 3
+    },
+    {
+      "question": "Mi piace fare una passeggiata al __________.",
+      "options": ["mare", "supermercato", "parco", "ristorante"],
+      "correct_answer": "parco",
+      "score": 3
+    },
+    {
+      "question": "Mi piace mangiare il __________ con le fragole.",
+      "options": ["gelato", "libro", "giornale", "pane"],
+      "correct_answer": "gelato",
+      "score": 2
+    },
+    {
+      "question": "Le __________ sono luminose nel cielo notturno.",
+      "options": ["scarpe", "cuffie", "stelle", "città"],
+      "correct_answer": "stelle",
+      "score": 3
+    },
+    {
+      "question": "Ho dimenticato i __________ in ufficio.",
+      "options": ["libri", "chiavi", "sedie", "telecomando"],
+      "correct_answer": "libri",
+      "score": 3
+    },
+    {
+      "question": "Andiamo al __________ per una cena speciale.",
+      "options": ["mare", "supermercato", "parco", "ristorante"],
+      "correct_answer": "ristorante",
+      "score": 3
+    },
+    {
+      "question": "Mi piace leggere il __________ al mattino.",
+      "options": ["gelato", "libro", "giornale", "pane"],
+      "correct_answer": "giornale",
+      "score": 2
+    },
+    {
+      "question": "La __________ è alta e robusta.",
+      "options": ["cane", "albero", "pane", "ragazza"],
+      "correct_answer": "ragazza",
+      "score": 3
+    },
+    {
+      "question": "Mi piace guardare la TV con le __________.",
+      "options": ["scarpe", "cuffie", "stelle", "carte"],
+      "correct_answer": "cuffie",
+      "score": 2
+    },
+    {
+      "question": "Ho dimenticato la __________ in macchina.",
+      "options": ["sedia", "palla", "chiave", "casa"],
+      "correct_answer": "chiave",
+      "score": 3
+    }
+  ]
+  

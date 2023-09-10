@@ -1,0 +1,123 @@
+[
+    {
+      "question": "Which of the following is a synonym for 'happy'?",
+      "options": ["Sad", "Joyful", "Angry", "Tired"],
+      "correct_answer": "Joyful",
+      "score": 3
+    },
+    {
+      "question": "What is the plural form of 'child'?",
+      "options": ["Childs", "Childen", "Children", "Childs"],
+      "correct_answer": "Children",
+      "score": 2
+    },
+    {
+      "question": "He was __________ to see his old friend after many years.",
+      "options": ["sad", "excited", "angry", "tired"],
+      "correct_answer": "excited",
+      "score": 3
+    },
+    {
+      "question": "The __________ jumped over the lazy dog.",
+      "options": ["quick", "quickly", "quickness", "quicker"],
+      "correct_answer": "quick",
+      "score": 2
+    },
+    {
+      "question": "She __________ to the store to buy some groceries.",
+      "options": ["drive", "drove", "driven", "driving"],
+      "correct_answer": "drove",
+      "score": 3
+    },
+    {
+      "question": "He __________ his homework before going to bed.",
+      "options": ["finish", "finished", "finishing", "finishes"],
+      "correct_answer": "finished",
+      "score": 4
+    },
+    {
+      "question": "The __________ of the matter is that we need a solution.",
+      "options": ["point", "points", "pointed", "pointing"],
+      "correct_answer": "point",
+      "score": 3
+    },
+    {
+      "question": "They __________ at the restaurant for over an hour.",
+      "options": ["waits", "waiting", "wait", "waited"],
+      "correct_answer": "waited",
+      "score": 3
+    },
+    {
+      "question": "The concert was __________ due to bad weather.",
+      "options": ["canceled", "canceling", "cancellation", "cancels"],
+      "correct_answer": "canceled",
+      "score": 4
+    },
+    {
+      "question": "She __________ up early every morning to exercise.",
+      "options": ["wakes", "waking", "wake", "waked"],
+      "correct_answer": "wakes",
+      "score": 2
+    },
+    {
+      "question": "The teacher asked the students to __________ their homework on time.",
+      "options": ["complete", "completes", "completing", "completed"],
+      "correct_answer": "complete",
+      "score": 4
+    },
+    {
+      "question": "The cat __________ the mouse under the table.",
+      "options": ["chased", "chase", "chases", "chasing"],
+      "correct_answer": "chased",
+      "score": 3
+    },
+    {
+      "question": "The __________ news made her cry.",
+      "options": ["sad", "saddening", "sadly", "sadden"],
+      "correct_answer": "saddening",
+      "score": 4
+    },
+    {
+      "question": "She __________ the book on the shelf.",
+      "options": ["put", "puts", "putting", "putted"],
+      "correct_answer": "put",
+      "score": 2
+    },
+    {
+      "question": "The __________ was on fire, and the firefighters arrived quickly.",
+      "options": ["build", "building", "builds", "built"],
+      "correct_answer": "building",
+      "score": 4
+    },
+    {
+      "question": "They decided to __________ their vacation plans due to unforeseen circumstances.",
+      "options": ["cancel", "canceled", "cancelling", "cancellation"],
+      "correct_answer": "cancel",
+      "score": 3
+    },
+    {
+      "question": "He __________ the mountain on his own and reached the summit.",
+      "options": ["climb", "climbed", "climbing", "climbs"],
+      "correct_answer": "climbed",
+      "score": 4
+    },
+    {
+      "question": "The __________ of the story was unexpected and left the readers amazed.",
+      "options": ["end", "ending", "ends", "ended"],
+      "correct_answer": "ending",
+      "score": 3
+    },
+    {
+      "question": "She __________ her keys at home and couldn't get into her car.",
+      "options": ["leave", "leaves", "left", "leaving"],
+      "correct_answer": "left",
+      "score": 2
+    },
+    {
+      "question": "The __________ car sped down the highway.",
+      "options": ["red", "read", "reed", "ridden"],
+      "correct_answer": "red",
+      "score": 3
+    }
+  ]
+  

@@ -1,0 +1,123 @@
+[
+    {
+      "question": "Je vais à __________ pour acheter du pain.",
+      "options": ["l'école", "la plage", "la boulangerie", "le parc"],
+      "correct_answer": "la boulangerie",
+      "score": 3
+    },
+    {
+      "question": "J'aime lire un bon __________ le soir.",
+      "options": ["journal", "livre", "film", "magazine"],
+      "correct_answer": "livre",
+      "score": 2
+    },
+    {
+      "question": "Le __________ est très chaud en été.",
+      "options": ["vent", "soleil", "pluie", "neige"],
+      "correct_answer": "soleil",
+      "score": 3
+    },
+    {
+      "question": "Nous allons au __________ pour nos vacances.",
+      "options": ["travail", "musée", "restaurant", "cinéma"],
+      "correct_answer": "restaurant",
+      "score": 2
+    },
+    {
+      "question": "Les __________ sont brillantes dans le ciel nocturne.",
+      "options": ["étoiles", "nuages", "arbres", "oiseaux"],
+      "correct_answer": "étoiles",
+      "score": 3
+    },
+    {
+      "question": "Mon __________ est grand et vert.",
+      "options": ["chien", "jardin", "frère", "voiture"],
+      "correct_answer": "jardin",
+      "score": 2
+    },
+    {
+      "question": "Elle a acheté une nouvelle __________.",
+      "options": ["robe", "chaussure", "casquette", "écharpe"],
+      "correct_answer": "robe",
+      "score": 3
+    },
+    {
+      "question": "J'adore écouter de la musique avec mes __________.",
+      "options": ["amis", "parents", "voisins", "collègues"],
+      "correct_answer": "amis",
+      "score": 2
+    },
+    {
+      "question": "Le __________ est blanc en hiver.",
+      "options": ["ciel", "herbe", "mer", "château"],
+      "correct_answer": "ciel",
+      "score": 3
+    },
+    {
+      "question": "Nous avons besoin d'____________ pour allumer la lampe.",
+      "options": ["argent", "eau", "électricité", "nourriture"],
+      "correct_answer": "électricité",
+      "score": 2
+    },
+    {
+      "question": "Il fait chaud en __________.",
+      "options": ["hiver", "printemps", "été", "automne"],
+      "correct_answer": "été",
+      "score": 3
+    },
+    {
+      "question": "J'aime prendre un bon __________ au petit-déjeuner.",
+      "options": ["café", "thé", "jus", "cacao"],
+      "correct_answer": "café",
+      "score": 2
+    },
+    {
+      "question": "Les __________ chantent tôt le matin.",
+      "options": ["poissons", "oiseaux", "chiens", "chats"],
+      "correct_answer": "oiseaux",
+      "score": 3
+    },
+    {
+      "question": "Ma __________ est très gentille.",
+      "options": ["tante", "cousine", "sœur", "mère"],
+      "correct_answer": "mère",
+      "score": 2
+    },
+    {
+      "question": "Nous allons au __________ pour jouer au football.",
+      "options": ["cinéma", "restaurant", "parc", "magasin"],
+      "correct_answer": "parc",
+      "score": 3
+    },
+    {
+      "question": "J'aime manger des __________ pour le dessert.",
+      "options": ["gâteaux", "fruits", "bonbons", "pizzas"],
+      "correct_answer": "gâteaux",
+      "score": 2
+    },
+    {
+      "question": "Le __________ est blanc en hiver.",
+      "options": ["sol", "vent", "ciel", "nuage"],
+      "correct_answer": "sol",
+      "score": 3
+    },
+    {
+      "question": "Nous allons à la __________ pour nager.",
+      "options": ["plage", "montagne", "forêt", "église"],
+      "correct_answer": "plage",
+      "score": 2
+    },
+    {
+      "question": "J'aime porter des __________ élégants.",
+      "options": ["chaussures", "chapeaux", "gants", "manteaux"],
+      "correct_answer": "manteaux",
+      "score": 3
+    },
+    {
+      "question": "Nous avons une grande __________ dans notre cour.",
+      "options": ["maison", "piscine", "voiture", "chaise"],
+      "correct_answer": "piscine",
+      "score": 2
+    }
+  ]
+  
