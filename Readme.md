@@ -17,7 +17,7 @@ logic for scoring, and a database to store user progress and language data.
 
 ```terminal
 $ git clone https://github.com/devaraj764/lang-learn-project.git
-$ yarn # or npm i
+$ cd lang-learn-project
 ```
 
 ## project structure
@@ -38,7 +38,7 @@ client/
 ## Prerequisites
 
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
-- [Node](https://nodejs.org/en/download/) ^10.0.0
+- [Node](https://nodejs.org/en/download/) ^8.0.0
 - [npm](https://nodejs.org/en/download/package-manager/)
 
 notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
