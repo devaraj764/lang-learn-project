@@ -107,10 +107,13 @@ router.get('/get-questions/:lang/:testId', async (req, res) => {
 });
 
 // Route to create or update a question by questionId
-router.post('/update/:questionId', async (req, res) => {
+router.post('/update-question', async (req, res) => {
   try {
-    const { questionId } = req.params;
+    const { questionId } = req.query;
     const { question, options, correct_answer, score, language } = req.body;
+
+
+    console.log(req.body, questionId);
 
     let updatedQuestion;
 
@@ -120,25 +123,25 @@ router.post('/update/:questionId', async (req, res) => {
         questionId,
         req.body,
         { new: true }
-      ).select({
-        _id: 1,
-        question: 1,
-        options: 1,
-        score: 1,
-        correct_answer: 1
-      });
+      );
     } else {
       // Create a new question
-      updatedQuestion = await Question.create({ question, options, correct_answer, score, language }).select({
-        _id: 1,
-        question: 1,
-        options: 1,
-        score: 1,
-        correct_answer: 1
-      });
+      updatedQuestion = await Question.create({ question, options, correct_answer, score, language });
     }
 
-    res.json({ message: 'Question updated or created successfully', updatedQuestion });
+    res.json({ message: 'Question updated or created successfully', updatedQuestion, isNew: questionId ? false : true });
+  } catch (error) {
+    console.error('Error updating or creating question:', error);
+    res.status(500).json({ error: 'Unable to update or create question.' });
+  }
+});
+
+// Route to create or update a question by questionId
+router.post('/delete-question', async (req, res) => {
+  try {
+    const { questionId } = req.query;
+    const deletedOne = await Question.findByIdAndDelete(questionId)
+    res.json(deletedOne);
   } catch (error) {
     console.error('Error updating or creating question:', error);
     res.status(500).json({ error: 'Unable to update or create question.' });

@@ -1,6 +1,5 @@
-import { Box, HStack, Heading, Radio, RadioGroup, Text } from '@chakra-ui/react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Pagination from './Pagination';
+import { Box, Button, HStack, Heading, Radio, RadioGroup, Text } from '@chakra-ui/react';
+import { useState, useEffect } from 'react'
 
 type Question = {
     _id: string
@@ -10,76 +9,87 @@ type Question = {
     answer?: string
 }
 
-const TestQuestionsGrid = ({ questionsList, postAnswerMutation }: { questionsList: Question[], postAnswerMutation: any }) => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const queryParams = new URLSearchParams(location.search);
-    const currentPage = parseInt(queryParams.get('page') || '1');
-
+const TestQuestionsGrid = ({ questionsList, postAnswerMutation, showNext }: { questionsList: Question[], postAnswerMutation: any, showNext: boolean }) => {
     // Assuming you have a list of questions
-    var questions = questionsList;
-    const questionsPerPage = 5; // Adjust as needed
+    var [questions, setQuestions] = useState(questionsList);
 
-    // Calculate the range of questions to display
-    const indexOfLastQuestion = currentPage * questionsPerPage;
-    const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
+    const [randomQuestion, setRandomQuestion] = useState<Question | null>(null);
 
-    const handlePageChange = (page: number) => {
-        queryParams.set('page', page.toString());
-        navigate(`.?${queryParams.toString()}`);
+    const getRandomUnansweredQuestion = () => {
+        const unansweredQuestions = questions.filter((question) => !question.answer);
+
+        if (unansweredQuestions.length === 0) {
+            setRandomQuestion(null); // No more unanswered questions
+        } else {
+            const randomIndex = Math.floor(Math.random() * unansweredQuestions.length);
+            const selectedQuestion = unansweredQuestions[randomIndex];
+            setRandomQuestion(selectedQuestion);
+        }
+    };
+
+    const handleNextQuestion = () => {
+        getRandomUnansweredQuestion();
     };
 
 
     const handlePostAnswer = async (data: any) => {
-        await postAnswerMutation.mutate({
-            questionId: data.questionId,
-            answer: data.answer,
-        });
-        const ques = questions;
-        ques[data.index].answer = data.answer;
-        console.log(questions[data.index])
+        try{
+            await postAnswerMutation.mutate({
+                questionId: data.questionId,
+                answer: data.answer,
+            });
+
+        }catch(error){
+            console.log(error)
+        }
     }
 
+    useEffect(() => {
+        if (questionsList) {
+            setQuestions(questionsList)
+            if(randomQuestion === null){[
+                getRandomUnansweredQuestion()
+            ]}
+        }
+    }, [questionsList])
+
     return (
+        randomQuestion &&
         <>
-            {questions?.map((question: Question, index: number) => (
-                index >= indexOfFirstQuestion && index <= indexOfLastQuestion &&
-                <Box key={question._id} borderWidth="1px" p={4} my={3} borderRadius="md"
+            <Box key={randomQuestion._id} borderWidth="1px" p={4} my={3} borderRadius="md"
+            >
+                <HStack justifyContent={'space-between'} mb={5}>
+                    <Heading as="h4" fontSize="lg" mr={'10px'}>
+                        {randomQuestion.question}
+                    </Heading>
+                    <Text fontSize="xs" color="gray.500">
+                        {randomQuestion.score} marks
+                    </Text>
+                </HStack>
+                <RadioGroup
+                    value={randomQuestion.answer}
+                    isDisabled={randomQuestion.answer ? true : false}
+                    my={2}
                 >
-                    <HStack justifyContent={'space-between'} mb={5}>
-                        <Heading as="h4" fontSize="lg" mr={'10px'}>
-                            {question.question}
-                        </Heading>
-                        <Text fontSize="xs" color="gray.500">
-                            {question.score} marks
-                        </Text>
-                    </HStack>
-                    <RadioGroup
-                        defaultValue={question.answer}
-                        my={2}
-                    >
-                        {question.options.map((option, index) => (
-                            <Box key={index} border={'1px solid #eee'} p={2} mb={2} rounded={'base'}>
-                                <Radio value={option} mr={3} checked={true} onChange={() =>
-                                    handlePostAnswer({
-                                        questionId: question._id,
-                                        answer: option,
-                                        index
-                                    })
-                                }>
-                                    {option}
-                                </Radio>
-                            </Box>
-                        ))}
-                    </RadioGroup>
-                </Box>
-            ))
+                    {randomQuestion.options.map((option, index) => (
+                        <Box key={index} border={'1px solid #eee'} p={2} mb={2} rounded={'base'}>
+                            <Radio value={option} mr={3} checked={true} onChange={() =>
+                                handlePostAnswer({
+                                    questionId: randomQuestion._id,
+                                    answer: option,
+                                    index
+                                })
+                            }>
+                                {option}
+                            </Radio>
+                        </Box>
+                    ))}
+                </RadioGroup>
+            </Box>
+            {
+                showNext &&
+                <Button size='lg' onClick={handleNextQuestion}>Next</Button>
             }
-            <Pagination
-                currentPage={currentPage}
-                totalPages={Math.ceil(questions.length / questionsPerPage)}
-                onPageChange={handlePageChange}
-            />
         </>
     )
 }

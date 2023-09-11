@@ -50,6 +50,26 @@ const LanguageTest: React.FC = () => {
             onError: (error: Error) => {
                 // Handle error (e.g., show an error message)
                 console.error('Error posting answer:', error);
+            },
+            onSuccess: (data: any) => {
+                setAnswerdCount(data?.answersCount)
+                const ques = questions;
+                const index= ques.findIndex(question => question._id === data.updatedData.question);
+                ques[index].answer = data.updatedData.answer;
+                setQuestions(ques);
+                if(data.isCorrect){
+                    toast({
+                        title: `Yay 👏!!! you are right..`,
+                        status: 'success',
+                        duration: 5000, // Duration for which the toast is displayed (in milliseconds)
+                    });
+                }else{
+                    toast({
+                        title: `Sorry you choose wrong option!`,
+                        status: 'error',
+                        duration: 5000, // Duration for which the toast is displayed (in milliseconds)
+                    });
+                }
             }
         });
 
@@ -137,13 +157,16 @@ const LanguageTest: React.FC = () => {
                 <Spacer h={'1em'} />
                 {
                     questionsLoading ? <Tag size={'lg'}>Loading..</Tag> :
-                        <TestQuestionsGrid questionsList={questions} postAnswerMutation={postAnswerMutation} />
+                        <TestQuestionsGrid questionsList={questions} postAnswerMutation={postAnswerMutation} showNext={answerdCount === questions.length ? false : true} />
                 }
-                <HStack justifyContent={'flex-end'}>
-                    <Tooltip label={answerdCount !== questions.length ? 'Answer all questions to submit' : 'Submit test'}>
-                        <Button isDisabled={answerdCount !== questions.length} size={'lg'} variant="solid" colorScheme='teal' disabled={submitTestMutaion.isLoading} onClick={() => submitTestMutaion.mutate()}>Submit</Button>
-                    </Tooltip>
-                </HStack>
+                {
+                    answerdCount === questions.length &&
+                    <HStack justifyContent={'flex-end'}>
+                        <Tooltip label={answerdCount !== questions.length ? 'Answer all questions to submit' : 'Submit test'}>
+                            <Button isDisabled={answerdCount !== questions.length} size={'lg'} variant="solid" colorScheme='teal' disabled={submitTestMutaion.isLoading} onClick={() => submitTestMutaion.mutate()}>Submit</Button>
+                        </Tooltip>
+                    </HStack>
+                }
             </Container >
         </VStack >
     )

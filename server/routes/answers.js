@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const Answer = require('../models/Answer');
+const Question = require('../models/Question');
 
 // Route to create or update an answer for a specific testId and questionId
 router.post('/post-answer', async (req, res) => {
@@ -24,10 +25,12 @@ router.post('/post-answer', async (req, res) => {
     }
 
     await existingAnswer.save();
+    const question = await Question.findOne({ _id: questionId, correct_answer: answer });
+    const answersCount = await Answer.count({ test: testId });
 
-    const answersCount = await Answer.count({test: testId})
+    console.log(question)
 
-    res.status(200).json(answersCount);
+    res.status(200).json({ answersCount, updatedData: existingAnswer, isCorrect: question ? true : false });
   } catch (error) {
     console.error('Error creating or updating answer:', error);
     res.status(500).json({ error: 'Unable to create or update answer.' });

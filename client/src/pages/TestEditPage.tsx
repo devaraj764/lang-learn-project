@@ -1,4 +1,4 @@
-import { Container, HStack, Heading,  Tag, VStack } from '@chakra-ui/react'
+import {  Container, HStack, Heading, Tag, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import NavBar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
@@ -14,16 +14,6 @@ type Question = {
     answer?: string
 }
 
-// count
-
-// function countQuestionsWithAnswers(questions: Question[]): number {
-//     return questions.reduce((count: number, question: Question) => {
-//         if (question.answer) {
-//             return count + 1;
-//         }
-//         return count;
-//     }, 0);
-// }
 
 const TestEditPage: React.FC = () => {
     const { lang } = useParams<{ lang: string }>();
@@ -42,7 +32,6 @@ const TestEditPage: React.FC = () => {
         if (lang) questionsMutate({ lang })
     }, [lang])
 
-
     return (
         <VStack>
             <NavBar />
@@ -54,10 +43,9 @@ const TestEditPage: React.FC = () => {
                         </Heading>
                     </div>
                 </HStack>
-                
                 {
                     questionsLoading ? <Tag size={'lg'}>Loading..</Tag> :
-                        <EditTestQuestionsGrid questionsList={questions} />
+                        <EditTestQuestionsGrid questionsList={questions} lang={lang || 'english'} />
                 }
             </Container>
         </VStack >

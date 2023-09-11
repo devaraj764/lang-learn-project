@@ -5,6 +5,7 @@ const questionSchema = new mongoose.Schema({
   question: {
     type: String,
     required: true,
+    unique: true
   },
   options: {
     type: [String],

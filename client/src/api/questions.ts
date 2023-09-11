@@ -16,7 +16,16 @@ export const fetchQuestions = async (lang: string, testId?: string) => {
     return response.data;
 };
 
-export const updateQuestion = async (questionId: string, data?: any): Promise<any> => {
-    const response = await axiosInstance.post(`/questions/update/${questionId}`, data);
+export const updateQuestion = async (questionId?: string, data?: any): Promise<any> => {
+    var uri: string;
+    if (questionId) uri = `/questions/update-question?questionId=${questionId}`;
+    else uri = `/questions/update-question`;
+    const response = await axiosInstance.post(uri, data);
+    return response.data;
+};
+
+export const deleteQuestion = async (questionId: string): Promise<any> => {
+    var uri: string = uri = `/questions/delete-question?questionId=${questionId}`;
+    const response = await axiosInstance.post(uri);
     return response.data;
 };
